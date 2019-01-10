@@ -8,6 +8,9 @@ import {
     Input,
     Button
 } from 'react-native-elements'
+import strings from './resources/strings'
+
+console.log("Strings: ", strings)
 
 export default class WeightEntryPage extends Component<{}> {
     constructor(props) {
@@ -23,19 +26,19 @@ export default class WeightEntryPage extends Component<{}> {
             <ThemeProvider>
                 <View style={styles.container}>
                     <Text style={styles.description}>
-                        Please, enter your weight below.
-                    </Text>
-                    <Text style={styles.description}>
-                        Pro Tip: You can actually use any number you want to track - weight, waist measurement or a combination of locations totaled together, or even body fat percentage. Just pick one that works for you.   
+                        {strings.weightEntry.direction}
                     </Text>
                     <View style={styles.flowRight}>
                         <Input
-                            placeholder='Enter weight'
+                            placeholder={strings.weightEntry.inputPlaceholder}
                             style={styles.weightInput}/>
                         <Button
                             onPress={() => {}}
                             title='Record'/>
                     </View>
+                    <Text style={styles.description}>
+                        {strings.weightEntry.tip}   
+                    </Text>
                 </View>
             </ThemeProvider>
         )
@@ -43,14 +46,14 @@ export default class WeightEntryPage extends Component<{}> {
 }
 
 const styles = StyleSheet.create({
-    description: {
-        marginBottom: 20,
-        textAlign: 'center'
-    },
     container: {
         padding: 30,
         marginTop: 65,
         alignItems: 'center'
+    },
+    description: {
+        marginBottom: 20,
+        width: '100%'
     },
     flowRight: {
         //flexDirection: 'row',
