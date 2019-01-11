@@ -10,8 +10,6 @@ import {
 } from 'react-native-elements'
 import strings from './resources/strings'
 
-console.log("Strings: ", strings)
-
 export default class WeightEntryPage extends Component<{}> {
     constructor(props) {
         super(props)
@@ -25,20 +23,25 @@ export default class WeightEntryPage extends Component<{}> {
         return (
             <ThemeProvider>
                 <View style={styles.container}>
-                    <Text style={styles.description}>
-                        {strings.weightEntry.direction}
-                    </Text>
-                    <View style={styles.flowRight}>
+                    <View style={styles.top}>
+                        <Text style={styles.description}>
+                            {strings.weightEntry.direction}
+                        </Text>
+                    </View>
+                    <View style={styles.entrySection}>
                         <Input
                             placeholder={strings.weightEntry.inputPlaceholder}
                             style={styles.weightInput}/>
                         <Button
                             onPress={() => {}}
-                            title='Record'/>
+                            title='Record'
+                            style={styles.weightButton}/>
                     </View>
-                    <Text style={styles.description}>
-                        {strings.weightEntry.tip}   
-                    </Text>
+                    <View style={styles.bottom}>
+                        <Text style={styles.description}>
+                        {   strings.weightEntry.tip}   
+                        </Text>
+                    </View>
                 </View>
             </ThemeProvider>
         )
@@ -47,22 +50,32 @@ export default class WeightEntryPage extends Component<{}> {
 
 const styles = StyleSheet.create({
     container: {
+        alignItems: 'center',
+        flex: 1,
+        marginTop: 93,
         padding: 30,
-        marginTop: 65,
-        alignItems: 'center'
+    },
+    top: {
+        flex: 1,
+        width: '100%',
+    },
+    entrySection: {
+        alignItems: 'center',
+        width: '100%',
+    },
+    bottom: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        width: '100%',
     },
     description: {
-        marginBottom: 20,
-        width: '100%'
-    },
-    flowRight: {
-        //flexDirection: 'row',
-        alignItems: 'center',
-        alignSelf: 'stretch',
+        width: '100%',
     },
     weightInput: {
-        padding: 4,
-        marginRight: 5,
-        flexGrow: 1,
+    },
+    weightButton: {
+        marginBottom: 10,
+        marginTop: 10,
+        width: 250,
     },
 })
