@@ -9,24 +9,24 @@
 'use strict'
 
 import React, {Component} from 'react'
-import {StyleSheet, NavigatorIOS} from 'react-native'
-import WeightEntryPage from './WeightEntryPage'
+import WeightEntryScreen from './WeightEntryScreen'
+import GraphScreen from './GraphScreen'
+import { createStackNavigator, createAppContainer } from 'react-navigation'
 
-export default class App extends Component<{}> {
-    render() {
-        return (
-            <NavigatorIOS
-                style={styles.container}
-                initialRoute={{
-                    title: 'Simple Weight Grapher',
-                    component: WeightEntryPage,
-                }}/>
-        )
-    }
+const RootStack = createStackNavigator(
+  {
+    WeightEntry: WeightEntryScreen,
+    Graph: GraphScreen,
+  },
+  {
+    initialRouteName: 'WeightEntry',
+  }
+)
+
+const AppContainer = createAppContainer(RootStack)
+
+export default class App extends Component {
+  render() {
+    return <AppContainer />
+  }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-})

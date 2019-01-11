@@ -10,7 +10,7 @@ import {
 } from 'react-native-elements'
 import strings from './resources/strings'
 
-export default class WeightEntryPage extends Component<{}> {
+export default class WeightEntryScreen extends Component {
     constructor(props) {
         super(props)
     }
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flex: 1,
-        marginTop: 93,
+        //marginTop: 93,
         padding: 30,
     },
     top: {
