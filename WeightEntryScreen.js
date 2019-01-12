@@ -11,8 +11,9 @@ import {
 import strings from './resources/strings'
 
 export default class WeightEntryScreen extends Component {
-    constructor(props) {
-        super(props)
+    
+    navigateToGraph() {
+        this.props.navigation.navigate('Graph')
     }
 
     _recordWeight() {
@@ -33,7 +34,7 @@ export default class WeightEntryScreen extends Component {
                             placeholder={strings.weightEntry.inputPlaceholder}
                             style={styles.weightInput}/>
                         <Button
-                            onPress={() => this.props.navigation.navigate('Graph')}
+                            onPress={this._recordWeight}
                             title='Record'
                             style={styles.weightButton}/>
                     </View>

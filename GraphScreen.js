@@ -5,14 +5,14 @@ import { StyleSheet, View } from 'react-native'
 import {
     ThemeProvider,
     Text,
-    Input,
     Button
 } from 'react-native-elements'
 import strings from './resources/strings'
 
 export default class GraphScreen extends Component {
-    constructor(props) {
-        super(props)
+
+    navigateToWeightEntry() {
+        this.props.navigation.navigate('WeightEntry')
     }
 
     render() {
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flex: 1,
-        marginTop: 93,
+        marginTop: 16,
         padding: 30,
     },
     top: {

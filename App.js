@@ -11,10 +11,10 @@
 import React, {Component} from 'react'
 import WeightEntryScreen from './WeightEntryScreen'
 import GraphScreen from './GraphScreen'
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import { createBottomTabNavigator, createAppContainer } from 'react-navigation'
 
-const RootStack = createStackNavigator({
-    WeightEntry: {
+const RootStack = createBottomTabNavigator({
+    'Weight Entry': {
       screen: WeightEntryScreen,
     },
     Graph: {
