@@ -13,15 +13,16 @@ import WeightEntryScreen from './WeightEntryScreen'
 import GraphScreen from './GraphScreen'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 
-const RootStack = createStackNavigator(
-  {
-    WeightEntry: WeightEntryScreen,
-    Graph: GraphScreen,
-  },
-  {
-    initialRouteName: 'WeightEntry',
-  }
-)
+const RootStack = createStackNavigator({
+    WeightEntry: {
+      screen: WeightEntryScreen,
+    },
+    Graph: {
+      screen: GraphScreen,
+    },
+  }, {
+    headerMode: 'none',
+  })
 
 const AppContainer = createAppContainer(RootStack)
 

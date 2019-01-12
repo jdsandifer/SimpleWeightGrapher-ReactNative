@@ -33,7 +33,7 @@ export default class WeightEntryScreen extends Component {
                             placeholder={strings.weightEntry.inputPlaceholder}
                             style={styles.weightInput}/>
                         <Button
-                            onPress={() => {}}
+                            onPress={() => this.props.navigation.navigate('Graph')}
                             title='Record'
                             style={styles.weightButton}/>
                     </View>

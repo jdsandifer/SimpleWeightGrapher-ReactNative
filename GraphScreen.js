@@ -41,10 +41,6 @@ const styles = StyleSheet.create({
         flex: 1,
         width: '100%',
     },
-    entrySection: {
-        alignItems: 'center',
-        width: '100%',
-    },
     bottom: {
         flex: 1,
         justifyContent: 'flex-end',
@@ -52,12 +48,5 @@ const styles = StyleSheet.create({
     },
     description: {
         width: '100%',
-    },
-    weightInput: {
-    },
-    weightButton: {
-        marginBottom: 10,
-        marginTop: 10,
-        width: 250,
     },
 })
