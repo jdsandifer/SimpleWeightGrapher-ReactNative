@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flex: 1,
-        //marginTop: 93,
+        marginTop: 16,
         padding: 30,
     },
     top: {
